@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                navLinks.style.display = '';
+            }
+
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
