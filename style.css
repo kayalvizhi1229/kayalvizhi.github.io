@@ -126,6 +126,7 @@ h1, h2, h3 {
 .highlight {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -406,6 +407,47 @@ section {
     color: var(--text-light);
 }
 
+/* Achievements */
+.achievements {
+    background: var(--bg-light);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ach-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.ach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.ach-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ach-title {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.ach-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
 /* Contact */
 .contact-box {
     background: var(--primary-color);
@@ -429,7 +471,8 @@ section {
 .contact-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .contact-links a {
@@ -470,21 +513,15 @@ footer p {
     margin-left: auto;
 }
 
-.profile-placeholder {
+.profile-img {
     width: 100%;
     height: 100%;
-    background: #e9ecef;
+    object-fit: cover;
     border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10rem;
-    color: #dee2e6;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
     border: 8px solid white;
     box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 .visual-element-1 {
