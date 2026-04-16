@@ -82,6 +82,10 @@ h1, h2, h3 {
     color: var(--primary-color);
 }
 
+.nav-links a i {
+    display: none; /* Hide icons on desktop */
+}
+
 .btn-cta {
     background: var(--primary-color);
     color: white !important;
@@ -560,5 +564,76 @@ footer p {
     .hero-btns { justify-content: center; }
     .image-wrapper { margin: 0 auto; width: 300px; height: 380px; }
     .about-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        justify-content: center; /* Center logo on mobile */
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 -2px 20px rgba(0,0,0,0.08);
+        padding: 12px 10px;
+        justify-content: space-between;
+        z-index: 1000;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        border-radius: 20px 20px 0 0;
+    }
+
+    .nav-links li {
+        flex: 1;
+    }
+
+    .nav-links a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.65rem;
+        font-weight: 600;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links a i {
+        display: block !important;
+        font-size: 1.2rem;
+        color: var(--primary-color);
+    }
+
+    .nav-links .btn-cta {
+        background: transparent;
+        color: var(--text-light) !important;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .nav-links .btn-cta i {
+        color: var(--secondary-color);
+    }
+
+    .nav-links span {
+        display: block;
+    }
+
+    /* Add padding to body to prevent content from being hidden by bottom nav */
+    body {
+        padding-bottom: 80px;
+    }
+
+    .contact-box {
+        padding: 3rem 1.5rem;
+    }
+
+    .contact-box h2 {
+        font-size: 2rem;
+    }
 }
