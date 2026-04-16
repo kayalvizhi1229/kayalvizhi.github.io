@@ -1,29 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
+    
+    // Mobile Menu Toggle logic removed as part of mobile optimization (using bottom tab bar instead)
 
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // Basic mobile styles handled here or in CSS
-            if (navLinks.classList.contains('active')) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'white';
-                navLinks.style.padding = '2rem';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            } else {
-                navLinks.style.display = '';
-            }
-        });
-    }
-
-    // Scroll Reveal Animation (Simple)
+    // Scroll Reveal Animation
     const observerOptions = {
         threshold: 0.1
     };
@@ -50,12 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             
-            // Close mobile menu if open
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                navLinks.style.display = '';
-            }
-
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
