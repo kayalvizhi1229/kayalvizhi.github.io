@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.skill-category, .project-card, .timeline-content');
+    const revealElements = document.querySelectorAll('.skill-category, .project-card, .timeline-content, .ach-card');
     revealElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
